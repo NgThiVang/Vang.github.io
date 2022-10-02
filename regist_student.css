@@ -1,0 +1,117 @@
+/** common */
+* {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+}
+
+
+/** frame */
+.container {
+	border: 2px solid #6d92b0;
+	padding: 2% 4% 2% 3.2%;
+	margin-top: 5%;
+	margin-left: 10%;
+	height: 400px;
+	width: 500px;
+}
+
+.form-validate {
+	height: 100px;
+}
+
+.form-group {
+	padding: 0px;
+	height: 44px;
+}
+
+label {
+	display: inline-block;
+}
+
+.col-label {
+	text-align: center;
+	float: left;
+	width: 20%;
+	padding: 10px 9px 2px 9px;
+	border: 2px solid #6d92b0;
+	background-color: #70ad47;
+	color: white;
+}
+
+.col-sign{
+	color: red;
+}
+.col-input, .col-infor{
+	float: left;
+	width: 70%;
+}
+
+.radio-group {
+	margin-left: 10%;
+}
+
+.submit {
+	margin-left: 36.5%;
+}
+
+
+
+.form-validate p {
+	margin-top: 4px;
+	margin-left: 17px;
+	margin-bottom: 1px;
+	color: red;
+}
+
+input[type=text], select, .col-infor p {
+	border: 2px solid #6d92b0;
+	margin-left: 7%;
+	width: 95%;
+	height: 28px;
+}
+
+.radio-item {
+	display: inline-block;
+	position: relative;
+	user-select: none;
+	width: 25%;
+	margin-top: 5px;
+	margin-right: 10%;
+}
+
+.radio-item label {
+	margin-left: 15%;
+}
+
+input[type='radio']:after, input[type='radio']:checked:after  {
+	display: inline-block;
+	position: relative;
+	visibility: visible;
+	cursor: pointer;
+	content: "";
+	top: -2px;
+    left: -1px;
+    width: 12px;
+    height: 12px;
+	border-radius: 50%;
+    border: 2px solid #5888af;
+	background-color: #70ad47;
+}
+
+input[type='radio']:checked:after {
+	background-color: #6d92b0 !important;
+}
+
+select {
+	width: 55% !important;
+	height: 34px !important;
+}
+
+button[type=submit] {
+	border: none;
+	border-radius: 8px;
+	border: 2px solid #6d92b0;
+	background-color: #70ad47;
+	color: white;
+	padding: 9px 28px;
+}
