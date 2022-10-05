@@ -38,7 +38,8 @@ if(isset($_POST["submit"])) {
     if(!empty(empty($_POST["birth"]))) {
 		$birthErr = "Hãy nhập ngày sinh.";
 	} else {
-		$birth = date('dd')/date('mm')/date('YYYY') - get_data($_POST["birth"]);
+		$birth = date('dd')/date('mm')/date('YYYY');
+		$birth = get_data($_POST["birth"]);
 	}
 
 	if(empty($_POST["address"])) {
