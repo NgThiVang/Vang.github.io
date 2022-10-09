@@ -4,8 +4,8 @@
 $gender_arr = array("Nam", "Nữ");
 $major_arr = array(""=>"", "Khoa học máy tính"=>"MAT", "Khoa học vật liệu"=>"KDL");	
 		
-$name = $gender = $major = $birth = $address = "";
-$nameErr = $genderErr = $majorErr = $birthErr = $addressErr = "";
+$name = $gender = $major = $birth = $address = $image = "";
+$nameErr = $genderErr = $majorErr = $birthErr = $addressErr = $imageErr = "";
 		
 function get_data($data) {
 	$data = trim($data);
@@ -38,14 +38,20 @@ if(isset($_POST["submit"])) {
     if(!empty(empty($_POST["birth"]))) {
 		$birthErr = "Hãy nhập ngày sinh.";
 	} else {
-		$birth = date('dd')/date('mm')/date('YYYY');
+		$birth = date('dd')/date('mm')/date('YYYY') ; 
 		$birth = get_data($_POST["birth"]);
+		// .get_data($_POST["birth"]);
 	}
 
 	if(empty($_POST["address"])) {
 		$addressErr = " ";
 	} else {
 		$address = get_data($_POST["address"]);
+	}
+	if(empty($_POST["image"])) {
+		$imageErr = " ";
+	} else {
+		$image = get_data($_POST["image"]);
 	}
 				
 	if ($name != "" && $gender != "" && $major != "") {
@@ -54,6 +60,7 @@ if(isset($_POST["submit"])) {
 		$_SESSION["major"] = $major;
 		$_SESSION["birth"] = $birth;
 		$_SESSION["address"] = $address;
+		$_SESSION["image"] = $image;
 		
 		header("location: do_regist.php");
 		exit();
