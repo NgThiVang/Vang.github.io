@@ -11,6 +11,7 @@
 		
 		<div class="container">
 			<div class="form-validate">
+			<div style="width: 200px; padding: 1px;">
 				<p><?php echo $nameErr; ?></p>
 				<p><?php echo $genderErr; ?></p>
 				<p><?php echo $majorErr; ?></p>
@@ -94,6 +95,15 @@
 					<div class="col-input">
 						<input type="text" id="address" name="address" value="<?php echo isset($_POST["address"]) ? $_POST["address"] : "" ?>" /> 
 					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-label">
+					<label for="image">Hình ảnh</label>
+					</div>
+				
+					<div class="col-input">
+						<input type="file" id="image" name="image" value="<?php echo isset($_POST["image"]) ? $_POST["image"] : "" ?>" /> 
 				</div>
 
 				<div class="submit">
