@@ -10,8 +10,8 @@
 		?>
 		<style>
 			.container {
-				padding: 3% 4% 4% 2%;
-				height: 200px;
+				padding: 3% 10% 4% 5%;
+				height: 300px;
 			}
 			
 			.col-infor {
@@ -79,6 +79,19 @@
 				<div class="col-infor">
 					<p><?php echo $_SESSION["address"]; ?></p> 
 				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-label">
+						<label>Hình ảnh</label>
+					</div>
+			
+				<div class="col-infor">
+					<p><?php echo $_SESSION["image"]; ?></p> 
+				</div>
+			</div>
+			<div class="submit">
+					<button onClick=insertData() type="submit" name="submit" value="Submit">Xác nhận</button>
 			</div>
 		</div>
 		
