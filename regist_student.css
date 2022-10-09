@@ -8,15 +8,15 @@
 /** frame */
 .container {
 	border: 2px solid #6d92b0;
-	padding: 2% 4% 2% 3.2%;
+	padding: 2% 1% 2% 3.2%;
 	margin-top: 5%;
 	margin-left: 10%;
-	height: 400px;
+	height: 350px;
 	width: 500px;
 }
 
 .form-validate {
-	height: 100px;
+	height: 40px;
 }
 
 .form-group {
@@ -70,6 +70,11 @@ input[type=text], select, .col-infor p {
 	height: 28px;
 }
 
+input[type=file]{
+	margin-top: 2%;
+	margin-left: 7%;
+	margin-bottom: 7%;
+}
 .radio-item {
 	display: inline-block;
 	position: relative;
