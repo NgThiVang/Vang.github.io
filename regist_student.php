@@ -83,7 +83,7 @@
 					</div>
 				
 					<div class="col-input">
-						<input style="width:52%;" type="text" id="birth" name="birth" value="<?php echo isset($_POST["birth"]) ? $_POST["birth"] : "" ?>" /> 
+						<input style="width:52%;" type="text" id="date-time" name="birth" value="<?php echo isset($_POST["birth"]) ? $_POST["birth"] : "" ?>" /> 
 					</div>
 				</div>
 				
@@ -103,7 +103,7 @@
 					</div>
 				
 					<div class="col-input">
-						<input type="file" id="image" name="image" value="<?php echo isset($_POST["image"]) ? $_POST["image"] : "" ?>" /> 
+						<input type="file" id="image" name="image" accept="image/png, image/jpg, image/jpeg" value="<?php echo isset($_POST["image"]) ? $_POST["image"] : "" ?>" /> 
 				</div>
 
 				<div class="submit">

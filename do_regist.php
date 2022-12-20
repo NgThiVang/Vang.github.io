@@ -87,7 +87,12 @@
 					</div>
 			
 				<div class="col-infor">
-					<p><?php echo $_SESSION["image"]; ?></p> 
+				<?php
+				if ($_SESSION["image"] != "") {
+                    echo "<br> <img src='upload/".$_SESSION["image"]."' width='100' height='60'>";
+                }
+				?>
+					<!-- <p><?php echo $_SESSION["image"]; ?></p>  -->
 				</div>
 			</div>
 			<div class="submit">

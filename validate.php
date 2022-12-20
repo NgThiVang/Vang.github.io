@@ -13,7 +13,10 @@ function get_data($data) {
 	$data = htmlspecialchars($data);
 	return $data;
 }
-		
+function isValid($date, $format = 'Y-m-d') {
+    $dt = DateTime::createFromFormat($format, $date);
+    return $dt && $dt->format($format) === $date;
+}		
 session_start();
 			
 if(isset($_POST["submit"])) {
@@ -37,7 +40,7 @@ if(isset($_POST["submit"])) {
 	
     if(!empty(empty($_POST["birth"]))) {
 		$birthErr = "Hãy nhập ngày sinh.";
-	} else {
+	} else  {
 		$birth = date('dd')/date('mm')/date('YYYY') ; 
 		$birth = get_data($_POST["birth"]);
 		// .get_data($_POST["birth"]);
@@ -54,13 +57,22 @@ if(isset($_POST["submit"])) {
 		$image = get_data($_POST["image"]);
 	}
 				
-	if ($name != "" && $gender != "" && $major != "") {
+	if ($name != "" && $gender != "" && $major != "" && $image != "") {
 		$_SESSION["name"] = $name;
 		$_SESSION["gender"] = $gender;
 		$_SESSION["major"] = $major;
 		$_SESSION["birth"] = $birth;
 		$_SESSION["address"] = $address;
+		$date = (new DateTime())->format('YmdHis');
+        $hinhanhbase = basename($_FILES['image']['name']);
+        $image = str_replace('.', '_'.$date.'.', $hinhanhbase);
 		$_SESSION["image"] = $image;
+    	$target_dir = "upload/";
+        if(!file_exists($target_dir)){
+            mkdir($target_dir, 0777, true);
+        };
+        $target_file = $target_dir.$image;
+        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
 		
 		header("location: do_regist.php");
 		exit();
