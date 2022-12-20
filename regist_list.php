@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php 
     session_start();
+    if (isset($_POST['btn_timkiem'])) {
+        $_SESSION['phankhoa'] = $_POST['phankhoa'];
+        $_SESSION['tukhoa'] = $_POST['tukhoa'];
+    }
 ?>
 <html>
 <head>
@@ -113,10 +117,11 @@
     </style>
 </head>
 <body>
-    <form action="regist_student.php" method="POST">    
+<form method="POST">
         <div class="css">
             <label class="text">Khoa</label>
-            <select class="button1" name="phankhoa">
+            <select class="button1" name="phankhoa" id="phan_khoa">
+                <option selected disabled hidden><?php echo isset($_SESSION['phankhoa']) ? $_SESSION['phankhoa'] : ''; ?></option>
                 <?php
                     $kName = array("", "Khoa học máy tính", "Khoa học vật liệu");
                     $kValue = array("", "MAT", "KDL");
@@ -128,14 +133,15 @@
         </div>
         <div class="css">
             <label class="text">Từ khóa</label>
-            <input class="input" type="text" name="tukhoa">
+            <input class="input" type="text" name="tukhoa" id="tu_khoa" value="<?php echo isset($_SESSION['tukhoa']) ? $_SESSION['tukhoa'] : ''; ?>">
         </div>
-        <input type="submit" name="btn_timkiem" value="Tìm kiếm" class="input1">
+        <button id= "btn_xoa" name="btn_xoa" class="input1">Xóa</button>
+        <button id="btn_timkiem" name="btn_timkiem" class="input1">Tìm kiếm</button>
         <div class="count_student">
             Số sinh viên tìm thấy:  XXX
         </div>
         <div class="add_student">
-            <input type="submit" name="btn_them" value="Thêm" class="input2">
+            <input type="submit" name="btn_them" value="Thêm" class="input2" formaction="register.php"> 
         </div>
         <div>
             <table>
@@ -183,6 +189,13 @@
                 </tr>
             </table>
         </div>
+        <script type="text/javascript">
+            document.getElementById("btn_xoa").onclick = function() {
+                document.getElementById("phan_khoa").value = "";
+                document.getElementById("tu_khoa").value = "";
+                return false;
+            }
+        </script>
     </form>
 </body>
 </html>
